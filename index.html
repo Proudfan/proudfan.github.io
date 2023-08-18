@@ -1,26 +1,61 @@
---<!DOCTYPE html>
- <html lang="en">
- <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- 
-<title>个人书签</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>moyublog - Food Orders</title>
+  <link href="assets/css/icon.css" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='app' ng-app='app'>
+  <div>
+    <h1>Food Orders</h1>
+    <p>Make your order in style</p>
+  </div>
+  <div class='app_inner' ng-controller='FoodOrdersController as vm'>
+    <div class='app_inner__header'>
+      <div>
+        <i class='material-icons' ng-class='{"show": !vm.takeOrder, "hide": vm.takeOrder}' ng-click='vm.previousItem()'>keyboard_arrow_left</i>
+        <h1 ng-class='vm.textAnimationName'>{{ vm.activeFood.name }}</h1>
+        <i class='material-icons' ng-class='{"show": !vm.takeOrder, "hide": vm.takeOrder}' ng-click='vm.nextItem()'>keyboard_arrow_right</i>
+        <i class='material-icons' ng-class='{"show": vm.takeOrder, "hide": !vm.takeOrder}' ng-click='vm.takeOrder = !vm.takeOrder; vm.takeOrderAnimationName = "slide-down"' ng-show='vm.takeOrder'>close</i>
+      </div>
+      <div class='action'>
+        <button ng-class='{"hide": vm.takeOrder, "show": !vm.takeOrder}' ng-click='vm.takeOrder = true; vm.takeOrderAnimationName = "slide-up"' ng-show='!vm.takeOrder'>Create order</button>
+      </div>
+    </div>
+    <div class='app_inner__body' ng-class='vm.takeOrderAnimationName'>
+      <ul ng-class='vm.fadeAnimationName' ng-show='!vm.takeOrder'>
+        <strong>Included</strong>
+        <li ng-repeat='ingredient in vm.activeFood.ingredients'>{{ ingredient }}</li>
+      </ul>
+      <ul ng-class='vm.fadeAnimationName' ng-show='!vm.takeOrder'>
+        <strong>Extras</strong>
+        <li ng-repeat='extra in vm.activeFood.extras'>{{ extra }}</li>
+      </ul>
+      <div ng-class='{"show": vm.takeOrder, "hide": !vm.takeOrder}' ng-show='vm.takeOrder'>
+        <div>
+          <div class='tile'>
+            <span>Price</span>
+            <span>£19.99</span>
+          </div>
+          <div class='tile'>
+            <span>Quantity</span>
+            <input type='text' value='1'>
+          </div>
+        </div>
+        <div class='actions'>
+          <button ng-class='{"load": vm.done}' ng-click='vm.done = true'>{{ vm.done ? '' : 'Buy now (£19.99)' }}</button>
+          <p>Your order will be ready within 30 minutes of ordering</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='assets/js/angular.min.js'></script>
+<script src='assets/js/angular-animate.js'></script><script src="assets/js/script.js"></script>
 
-
-<p>网址:</p>
---
- 
- <ul>
- <li>中文版：<a href="https://globien.gitee.io">测试1</a></li>
- <li>英文版：<a href="https://globien.github.io">测试2</a></li>
- </ul>
-
-<p>网址:</p>
-
-<ul>
-  <li>中文版：<a href="https://globien.gitee.io/">测试3</a></li>
-  <li>英文版：<a href="https://globien.github.io/">测试4</a></li>
-</ul>
+</body>
 </html>
