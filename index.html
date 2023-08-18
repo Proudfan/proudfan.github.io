@@ -1,61 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>moyublog - Food Orders</title>
-  <link href="assets/css/icon.css" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css">
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>个人书签</title>
+	<link rel="apple-touch-icon" href="https://cdn.u1.huluxia.com/g3/M02/19/F5/wKgBOV23guqAIvy8AAAlSkLYaV8350.png">
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<div class='app' ng-app='app'>
-  <div>
-    <h1>Food Orders</h1>
-    <p>Make your order in style</p>
-  </div>
-  <div class='app_inner' ng-controller='FoodOrdersController as vm'>
-    <div class='app_inner__header'>
-      <div>
-        <i class='material-icons' ng-class='{"show": !vm.takeOrder, "hide": vm.takeOrder}' ng-click='vm.previousItem()'>keyboard_arrow_left</i>
-        <h1 ng-class='vm.textAnimationName'>{{ vm.activeFood.name }}</h1>
-        <i class='material-icons' ng-class='{"show": !vm.takeOrder, "hide": vm.takeOrder}' ng-click='vm.nextItem()'>keyboard_arrow_right</i>
-        <i class='material-icons' ng-class='{"show": vm.takeOrder, "hide": !vm.takeOrder}' ng-click='vm.takeOrder = !vm.takeOrder; vm.takeOrderAnimationName = "slide-down"' ng-show='vm.takeOrder'>close</i>
-      </div>
-      <div class='action'>
-        <button ng-class='{"hide": vm.takeOrder, "show": !vm.takeOrder}' ng-click='vm.takeOrder = true; vm.takeOrderAnimationName = "slide-up"' ng-show='!vm.takeOrder'>Create order</button>
-      </div>
-    </div>
-    <div class='app_inner__body' ng-class='vm.takeOrderAnimationName'>
-      <ul ng-class='vm.fadeAnimationName' ng-show='!vm.takeOrder'>
-        <strong>Included</strong>
-        <li ng-repeat='ingredient in vm.activeFood.ingredients'>{{ ingredient }}</li>
-      </ul>
-      <ul ng-class='vm.fadeAnimationName' ng-show='!vm.takeOrder'>
-        <strong>Extras</strong>
-        <li ng-repeat='extra in vm.activeFood.extras'>{{ extra }}</li>
-      </ul>
-      <div ng-class='{"show": vm.takeOrder, "hide": !vm.takeOrder}' ng-show='vm.takeOrder'>
-        <div>
-          <div class='tile'>
-            <span>Price</span>
-            <span>£19.99</span>
-          </div>
-          <div class='tile'>
-            <span>Quantity</span>
-            <input type='text' value='1'>
-          </div>
-        </div>
-        <div class='actions'>
-          <button ng-class='{"load": vm.done}' ng-click='vm.done = true'>{{ vm.done ? '' : 'Buy now (£19.99)' }}</button>
-          <p>Your order will be ready within 30 minutes of ordering</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- partial -->
-  <script src='assets/js/angular.min.js'></script>
-<script src='assets/js/angular-animate.js'></script><script src="assets/js/script.js"></script>
-
+<body style="line-height: 1.9;background-image:url(https://ae04.alicdn.com/kf/U754455a2964d4bc2b409d068186665cfy.jpeg);">
+	<div style="padding-top:10%;text-align:center;">
+		<p>
+			<img src="https://cdn.u1.huluxia.com/g3/M02/19/F5/wKgBOV23guqAIvy8AAAlSkLYaV8350.png" width="100">
+		</p>
+		<h1 style="color:#fff;">
+			<strong>名称</strong>
+		</h1>
+		<p style="font-size:3vh;color:#fff;">
+			<b>名称</b>Proud <br>真牛
+		</p>
+		<p>
+			<a style="border-radius:10px;padding:10px 38px;color:#fff;border-style:solid;text-decoration:none;" href="https://cdn.mom1.cn/wordpress/wordpress.zip">立即下载</a>
+		<p>
+			<span style="color: #bd8787;">最新版本 v1.1.1</span>
+			<br>
+			<span style="color:#ff0202;background-color:#9734344d;">MD5 值：E10ADC3949BA59ABBE56E057F20F883E</span>
+		</p>
+		<p style="color:#fff;">你的地址:
+		<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+		<script>document.write(returnCitySN["cname"])</script>  
+		© 
+		<a style="text-decoration:none;color:#fff;" href="#">Proudfan</a>.版权所有
+		</p>
+		<script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-2" count="200" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+	</div>
 </body>
 </html>
